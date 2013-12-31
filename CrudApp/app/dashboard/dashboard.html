@@ -1,0 +1,39 @@
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+    <section class="matter">
+        <div class="container-fluid">
+            <div data-ng-include="'/app/templates/Estudiante.html'"></div>
+            <div class="span12">
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="Web Api" allow-collapse="true">
+                    </div>
+                    <div class="widget-content text-center text-info">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Actualizar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="p in vm.listadoEstudiantes">
+                                    <td>{{p.Nombre}}</td>
+                                    <td ng-click="vm.VentanaEditarEstudiante(p)" >actualizar</td>
+                                    <td ng-click="vm.eliminarEstudiante(p.Codigo)" >eliminar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                          <button ng-click="vm.VentanaNuevoEstudiante()">
+                                Nuevo estudiante
+                          </button>
+
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+</section>
